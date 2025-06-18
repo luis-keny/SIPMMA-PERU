@@ -2,3 +2,32 @@
 *{
     margin: 0;
 }
+
+@font-face {
+    font-family: 'Nunito Sans';
+    src: url('/assets/fonts/Nunito/Nunito-ExtraLight.ttf'),
+    url('/assets/fonts/Nunito/Nunito-Light.tff'),
+    url('/assets/fonts/Nunito/Nunito-Regular.tff'),
+    url('/assets/fonts/Nunito/Nunito-Medium.tff'),
+    url('/assets/fonts/Nunito/Nunito-SemiBold.tff'),
+    url('/assets/fonts/Nunito/Nunito-Bold.tff'),
+    url('/assets/fonts/Nunito/Nunito-ExtraBold.tff'),
+    url('/assets/fonts/Nunito/Nunito-Black.tff');
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('/assets/fontsPoppins/Poppins-Thin.ttf'),
+    url('/assets/fonts/Poppins/Poppins-ExtraLight.tff'),
+    url('/assets/fonts/Poppins/Poppins-Light.tff'),
+    url('/assets/fonts/Poppins/Poppins-Regular.tff'),
+    url('/assets/fonts/Poppins/Poppins-Medium.tff'),
+    url('/assets/fonts/Poppins/Poppins-SemiBold.tff'),
+    url('/assets/fonts/Poppins/Poppins-Bold.tff'),
+    url('/assets/fonts/Poppins/Poppins-ExtraBold.tff'),
+    url('/assets/fonts/Poppins/Poppins-Black.tff');
+}
+
+body{
+    min-height: 100vh;
+}

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -9,4 +10,12 @@ import { Component } from '@angular/core';
 })
 export class LoginComponent {
 
+  ingresar(event: Event) {
+    event.preventDefault();
+    Swal.fire({
+      title: "Good job!",
+      text: "You clicked the button!",
+      icon: "success"
+    });
+  }
 }
