@@ -1,0 +1,325 @@
+<app-header></app-header>
+
+<body>
+    <main class="main-content">
+        <section class="polygon-generation">
+            <div class="group-generation">
+                <svg width="30" height="31" viewBox="0 0 30 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_115_2116)">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M25.62 15.0648L15.4555 26.3587C15.2085 26.6331 14.7781 26.6331 14.5311 26.3587L4.36655 15.0648C4.02452 14.6847 3.94989 14.134 4.17862 13.6765L7.18701 7.6597C7.3977 7.23833 7.82842 6.97217 8.29943 6.97217H21.6872C22.1583 6.97217 22.5889 7.23833 22.7996 7.6597L25.808 13.6765C26.0367 14.134 25.9621 14.6847 25.62 15.0648Z"
+                            stroke="#F4C610" stroke-width="2.48751" stroke-linecap="round" />
+                        <path
+                            d="M19.3465 11.3257L20.4183 13.4694C20.5237 13.6801 20.501 13.9322 20.3596 14.1206L18.7246 16.3007"
+                            stroke="#F4C610" stroke-width="2.48751" stroke-linecap="round" />
+                    </g>
+                    <defs>
+                        <clipPath id="clip0_115_2116">
+                            <rect width="29.8501" height="29.8501" fill="white"
+                                transform="matrix(-1 0 0 1 29.9186 0.753418)" />
+                        </clipPath>
+                    </defs>
+                </svg>
+                <h1 class="polygon-generation__title">Generación de polígonos</h1>
+            </div>
+            <form class="filter-form">
+                <div class="filter-form__group">
+                    <span for="region" class="filter-form__label">Región</span>
+                    <select id="mining-right" name="mining-right" class="filter-form__select">
+                        <option value="">Seleccionar</option>
+                    </select>
+                </div>
+                <div class="filter-form__group">
+                    <span for="province" class="filter-form__label">Provincia</span>
+                    <select id="mining-right" name="mining-right" class="filter-form__select">
+                        <option value="">Seleccionar</option>
+                    </select>
+                </div>
+                <div class="filter-form__group">
+                    <span for="district" class="filter-form__label">Distrito</span>
+                    <select id="mining-right" name="mining-right" class="filter-form__select">
+                        <option value="">Seleccionar</option>
+                    </select>
+                </div>
+                <div class="filter-form__group">
+                    <label for="mining-right" class="filter-form__label">Derecho minero</label>
+                    <input type="text" id="region" name="region" class="filter-form__input" placeholder="Text">
+                </div>
+                <div class="filter-form__actions">
+                    <button type="submit" class="button button--primary filter-form__button">
+                        <img src="assets/img/search.png" alt="Buscar" class="button__icon">
+                        Buscar
+                    </button>
+                    <button type="button" class="button button--secondary filter-form__button">
+                        <img src="assets/img/clean.svg" alt="Limpiar" class="button__icon">
+                        Limpiar
+                    </button>
+                </div>
+            </form>
+
+            <div class="polygon-generation__actions">
+                <button type="button" class="button button--accent button--icon-left">
+                    <img src="assets/img/cruz.svg" alt="Nueva generación" class="button__icon">
+                    Nueva generación
+                </button>
+                <div style="display: flex; align-items: center; gap: 4px;">
+                    <div class="pagination-info">
+                        1 a 20 de 1 registro
+                    </div>
+                    <div class="data-table__pagination-controls">
+                        <button class="button button--icon data-table__pagination-button"><img
+                                src="assets/img/first-page.svg" alt="Primera página"></button>
+                        <button class="button button--icon data-table__pagination-button"><img
+                                src="assets/img/prev-page.svg" alt="Página anterior"></button>
+                        <span class="data-table__current-page">1</span>
+                        <button class="button button--icon data-table__pagination-button"><img
+                                src="assets/img/next-page.svg" alt="Página siguiente"></button>
+                        <button class="button button--icon data-table__pagination-button"><img
+                                src="assets/img/last-page.svg" alt="Última página"
+                                style="transform: rotate(180deg);"></button>
+                        <select class="data-table__rows-per-page">
+                            <option value="10">10</option>
+                            <option value="20" selected>20</option>
+                            <option value="50">50</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="data-table">
+
+                <div class="data-table__scroll-wrapper">
+                    <table class="data-table__table">
+                        <thead class="data-table__thead">
+                            <tr class="data-table__row data-table__row--header">
+                                <th class="data-table__header data-table__header--sortable">
+                                    Acción
+                                </th>
+                                <th class="data-table__header data-table__header--sortable">
+                                    <div style="display: flex; justify-content: space-between;">
+                                        Código
+                                        <svg width="25" height="25" viewBox="0 0 25 25" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg" class="arrow">
+                                            <path
+                                                d="M7.72821 21.9785L7.72821 8.85352L11.1658 8.85455C11.5387 8.85455 11.8763 8.63345 12.0252 8.29166C12.1741 7.94986 12.1063 7.55181 11.853 7.27877L7.79048 2.90377C7.60321 2.70508 7.3532 2.60352 7.06804 2.60352C6.78288 2.60352 6.56686 2.70348 6.38131 2.90328L2.31874 7.27828C2.06546 7.55109 1.9976 7.94938 2.14655 8.29117C2.2955 8.63297 2.63328 8.85406 3.00594 8.85406L6.47819 8.85352L6.47819 21.9785C6.47819 22.324 6.75944 22.6035 7.06804 22.6035C7.37664 22.6035 7.72821 22.324 7.72821 21.9785ZM3.75705 7.60352L7.1032 4L10.4509 7.60352H3.75705ZM16.4432 3.22852V16.3535L13.0408 16.3525C12.6679 16.3525 12.3302 16.5736 12.1814 16.9154C12.0326 17.2572 12.0994 17.6543 12.3533 17.9277L16.4159 22.3027C16.6034 22.5036 16.8534 22.6035 17.0682 22.6035C17.2831 22.6035 17.5702 22.5036 17.7557 22.3038L21.8183 17.9288C22.0716 17.6559 22.1393 17.2577 21.9904 16.9159C21.8769 16.5723 21.537 16.3535 21.1659 16.3535H17.6932V3.22852C17.6932 2.88305 17.4137 2.60352 17.1034 2.60352C16.7931 2.60352 16.4432 2.88477 16.4432 3.22852ZM20.4511 17.6035L17.1034 21.207L13.7557 17.6035H20.4511Z"
+                                                fill="#3A424A" />
+                                        </svg>
+                                    </div>
+
+                                </th>
+                                <th class="data-table__header data-table__header--sortable">
+                                    <div style="display: flex; justify-content: space-between;">
+                                        RUC
+                                        <svg width="25" height="25" viewBox="0 0 25 25" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg" class="arrow">
+                                            <path
+                                                d="M7.72821 21.9785L7.72821 8.85352L11.1658 8.85455C11.5387 8.85455 11.8763 8.63345 12.0252 8.29166C12.1741 7.94986 12.1063 7.55181 11.853 7.27877L7.79048 2.90377C7.60321 2.70508 7.3532 2.60352 7.06804 2.60352C6.78288 2.60352 6.56686 2.70348 6.38131 2.90328L2.31874 7.27828C2.06546 7.55109 1.9976 7.94938 2.14655 8.29117C2.2955 8.63297 2.63328 8.85406 3.00594 8.85406L6.47819 8.85352L6.47819 21.9785C6.47819 22.324 6.75944 22.6035 7.06804 22.6035C7.37664 22.6035 7.72821 22.324 7.72821 21.9785ZM3.75705 7.60352L7.1032 4L10.4509 7.60352H3.75705ZM16.4432 3.22852V16.3535L13.0408 16.3525C12.6679 16.3525 12.3302 16.5736 12.1814 16.9154C12.0326 17.2572 12.0994 17.6543 12.3533 17.9277L16.4159 22.3027C16.6034 22.5036 16.8534 22.6035 17.0682 22.6035C17.2831 22.6035 17.5702 22.5036 17.7557 22.3038L21.8183 17.9288C22.0716 17.6559 22.1393 17.2577 21.9904 16.9159C21.8769 16.5723 21.537 16.3535 21.1659 16.3535H17.6932V3.22852C17.6932 2.88305 17.4137 2.60352 17.1034 2.60352C16.7931 2.60352 16.4432 2.88477 16.4432 3.22852ZM20.4511 17.6035L17.1034 21.207L13.7557 17.6035H20.4511Z"
+                                                fill="#3A424A" />
+                                        </svg>
+                                    </div>
+
+                                </th>
+                                <th class="data-table__header data-table__header--sortable">
+                                    <div style="display: flex; justify-content: space-between;">
+                                        Minero en vía de formalización
+                                        <svg width="25" height="25" viewBox="0 0 25 25" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg" class="arrow">
+                                            <path
+                                                d="M7.72821 21.9785L7.72821 8.85352L11.1658 8.85455C11.5387 8.85455 11.8763 8.63345 12.0252 8.29166C12.1741 7.94986 12.1063 7.55181 11.853 7.27877L7.79048 2.90377C7.60321 2.70508 7.3532 2.60352 7.06804 2.60352C6.78288 2.60352 6.56686 2.70348 6.38131 2.90328L2.31874 7.27828C2.06546 7.55109 1.9976 7.94938 2.14655 8.29117C2.2955 8.63297 2.63328 8.85406 3.00594 8.85406L6.47819 8.85352L6.47819 21.9785C6.47819 22.324 6.75944 22.6035 7.06804 22.6035C7.37664 22.6035 7.72821 22.324 7.72821 21.9785ZM3.75705 7.60352L7.1032 4L10.4509 7.60352H3.75705ZM16.4432 3.22852V16.3535L13.0408 16.3525C12.6679 16.3525 12.3302 16.5736 12.1814 16.9154C12.0326 17.2572 12.0994 17.6543 12.3533 17.9277L16.4159 22.3027C16.6034 22.5036 16.8534 22.6035 17.0682 22.6035C17.2831 22.6035 17.5702 22.5036 17.7557 22.3038L21.8183 17.9288C22.0716 17.6559 22.1393 17.2577 21.9904 16.9159C21.8769 16.5723 21.537 16.3535 21.1659 16.3535H17.6932V3.22852C17.6932 2.88305 17.4137 2.60352 17.1034 2.60352C16.7931 2.60352 16.4432 2.88477 16.4432 3.22852ZM20.4511 17.6035L17.1034 21.207L13.7557 17.6035H20.4511Z"
+                                                fill="#3A424A" />
+                                        </svg>
+                                    </div>
+
+                                </th>
+                                <th class="data-table__header data-table__header--sortable">
+                                    <div style="display: flex; justify-content: space-between;">
+                                        Código D
+                                        <svg width="25" height="25" viewBox="0 0 25 25" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg" class="arrow">
+                                            <path
+                                                d="M7.72821 21.9785L7.72821 8.85352L11.1658 8.85455C11.5387 8.85455 11.8763 8.63345 12.0252 8.29166C12.1741 7.94986 12.1063 7.55181 11.853 7.27877L7.79048 2.90377C7.60321 2.70508 7.3532 2.60352 7.06804 2.60352C6.78288 2.60352 6.56686 2.70348 6.38131 2.90328L2.31874 7.27828C2.06546 7.55109 1.9976 7.94938 2.14655 8.29117C2.2955 8.63297 2.63328 8.85406 3.00594 8.85406L6.47819 8.85352L6.47819 21.9785C6.47819 22.324 6.75944 22.6035 7.06804 22.6035C7.37664 22.6035 7.72821 22.324 7.72821 21.9785ZM3.75705 7.60352L7.1032 4L10.4509 7.60352H3.75705ZM16.4432 3.22852V16.3535L13.0408 16.3525C12.6679 16.3525 12.3302 16.5736 12.1814 16.9154C12.0326 17.2572 12.0994 17.6543 12.3533 17.9277L16.4159 22.3027C16.6034 22.5036 16.8534 22.6035 17.0682 22.6035C17.2831 22.6035 17.5702 22.5036 17.7557 22.3038L21.8183 17.9288C22.0716 17.6559 22.1393 17.2577 21.9904 16.9159C21.8769 16.5723 21.537 16.3535 21.1659 16.3535H17.6932V3.22852C17.6932 2.88305 17.4137 2.60352 17.1034 2.60352C16.7931 2.60352 16.4432 2.88477 16.4432 3.22852ZM20.4511 17.6035L17.1034 21.207L13.7557 17.6035H20.4511Z"
+                                                fill="#3A424A" />
+                                        </svg>
+                                    </div>
+
+                                </th>
+                                <th class="data-table__header data-table__header--sortable">
+                                    <div style="display: flex; justify-content: space-between;">
+                                        Derecho minero
+                                        <svg width="25" height="25" viewBox="0 0 25 25" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg" class="arrow">
+                                            <path
+                                                d="M7.72821 21.9785L7.72821 8.85352L11.1658 8.85455C11.5387 8.85455 11.8763 8.63345 12.0252 8.29166C12.1741 7.94986 12.1063 7.55181 11.853 7.27877L7.79048 2.90377C7.60321 2.70508 7.3532 2.60352 7.06804 2.60352C6.78288 2.60352 6.56686 2.70348 6.38131 2.90328L2.31874 7.27828C2.06546 7.55109 1.9976 7.94938 2.14655 8.29117C2.2955 8.63297 2.63328 8.85406 3.00594 8.85406L6.47819 8.85352L6.47819 21.9785C6.47819 22.324 6.75944 22.6035 7.06804 22.6035C7.37664 22.6035 7.72821 22.324 7.72821 21.9785ZM3.75705 7.60352L7.1032 4L10.4509 7.60352H3.75705ZM16.4432 3.22852V16.3535L13.0408 16.3525C12.6679 16.3525 12.3302 16.5736 12.1814 16.9154C12.0326 17.2572 12.0994 17.6543 12.3533 17.9277L16.4159 22.3027C16.6034 22.5036 16.8534 22.6035 17.0682 22.6035C17.2831 22.6035 17.5702 22.5036 17.7557 22.3038L21.8183 17.9288C22.0716 17.6559 22.1393 17.2577 21.9904 16.9159C21.8769 16.5723 21.537 16.3535 21.1659 16.3535H17.6932V3.22852C17.6932 2.88305 17.4137 2.60352 17.1034 2.60352C16.7931 2.60352 16.4432 2.88477 16.4432 3.22852ZM20.4511 17.6035L17.1034 21.207L13.7557 17.6035H20.4511Z"
+                                                fill="#3A424A" />
+                                        </svg>
+                                    </div>
+
+                                </th>
+                                <th class="data-table__header data-table__header--sortable">
+                                    <div style="display: flex; justify-content: space-between;">
+                                        Región
+                                        <svg width="25" height="25" viewBox="0 0 25 25" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg" class="arrow">
+                                            <path
+                                                d="M7.72821 21.9785L7.72821 8.85352L11.1658 8.85455C11.5387 8.85455 11.8763 8.63345 12.0252 8.29166C12.1741 7.94986 12.1063 7.55181 11.853 7.27877L7.79048 2.90377C7.60321 2.70508 7.3532 2.60352 7.06804 2.60352C6.78288 2.60352 6.56686 2.70348 6.38131 2.90328L2.31874 7.27828C2.06546 7.55109 1.9976 7.94938 2.14655 8.29117C2.2955 8.63297 2.63328 8.85406 3.00594 8.85406L6.47819 8.85352L6.47819 21.9785C6.47819 22.324 6.75944 22.6035 7.06804 22.6035C7.37664 22.6035 7.72821 22.324 7.72821 21.9785ZM3.75705 7.60352L7.1032 4L10.4509 7.60352H3.75705ZM16.4432 3.22852V16.3535L13.0408 16.3525C12.6679 16.3525 12.3302 16.5736 12.1814 16.9154C12.0326 17.2572 12.0994 17.6543 12.3533 17.9277L16.4159 22.3027C16.6034 22.5036 16.8534 22.6035 17.0682 22.6035C17.2831 22.6035 17.5702 22.5036 17.7557 22.3038L21.8183 17.9288C22.0716 17.6559 22.1393 17.2577 21.9904 16.9159C21.8769 16.5723 21.537 16.3535 21.1659 16.3535H17.6932V3.22852C17.6932 2.88305 17.4137 2.60352 17.1034 2.60352C16.7931 2.60352 16.4432 2.88477 16.4432 3.22852ZM20.4511 17.6035L17.1034 21.207L13.7557 17.6035H20.4511Z"
+                                                fill="#3A424A" />
+                                        </svg>
+                                    </div>
+
+                                </th>
+                                <th class="data-table__header data-table__header--sortable">
+                                    <div style="display: flex; justify-content: space-between;">
+                                        Provincia
+                                        <svg width="25" height="25" viewBox="0 0 25 25" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg" class="arrow">
+                                            <path
+                                                d="M7.72821 21.9785L7.72821 8.85352L11.1658 8.85455C11.5387 8.85455 11.8763 8.63345 12.0252 8.29166C12.1741 7.94986 12.1063 7.55181 11.853 7.27877L7.79048 2.90377C7.60321 2.70508 7.3532 2.60352 7.06804 2.60352C6.78288 2.60352 6.56686 2.70348 6.38131 2.90328L2.31874 7.27828C2.06546 7.55109 1.9976 7.94938 2.14655 8.29117C2.2955 8.63297 2.63328 8.85406 3.00594 8.85406L6.47819 8.85352L6.47819 21.9785C6.47819 22.324 6.75944 22.6035 7.06804 22.6035C7.37664 22.6035 7.72821 22.324 7.72821 21.9785ZM3.75705 7.60352L7.1032 4L10.4509 7.60352H3.75705ZM16.4432 3.22852V16.3535L13.0408 16.3525C12.6679 16.3525 12.3302 16.5736 12.1814 16.9154C12.0326 17.2572 12.0994 17.6543 12.3533 17.9277L16.4159 22.3027C16.6034 22.5036 16.8534 22.6035 17.0682 22.6035C17.2831 22.6035 17.5702 22.5036 17.7557 22.3038L21.8183 17.9288C22.0716 17.6559 22.1393 17.2577 21.9904 16.9159C21.8769 16.5723 21.537 16.3535 21.1659 16.3535H17.6932V3.22852C17.6932 2.88305 17.4137 2.60352 17.1034 2.60352C16.7931 2.60352 16.4432 2.88477 16.4432 3.22852ZM20.4511 17.6035L17.1034 21.207L13.7557 17.6035H20.4511Z"
+                                                fill="#3A424A" />
+                                        </svg>
+                                    </div>
+
+                                </th>
+                                <th class="data-table__header data-table__header--sortable">
+                                    <div style="display: flex; justify-content: space-between;">
+                                        Estado
+                                        <svg width="25" height="25" viewBox="0 0 25 25" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg" class="arrow">
+                                            <path
+                                                d="M7.72821 21.9785L7.72821 8.85352L11.1658 8.85455C11.5387 8.85455 11.8763 8.63345 12.0252 8.29166C12.1741 7.94986 12.1063 7.55181 11.853 7.27877L7.79048 2.90377C7.60321 2.70508 7.3532 2.60352 7.06804 2.60352C6.78288 2.60352 6.56686 2.70348 6.38131 2.90328L2.31874 7.27828C2.06546 7.55109 1.9976 7.94938 2.14655 8.29117C2.2955 8.63297 2.63328 8.85406 3.00594 8.85406L6.47819 8.85352L6.47819 21.9785C6.47819 22.324 6.75944 22.6035 7.06804 22.6035C7.37664 22.6035 7.72821 22.324 7.72821 21.9785ZM3.75705 7.60352L7.1032 4L10.4509 7.60352H3.75705ZM16.4432 3.22852V16.3535L13.0408 16.3525C12.6679 16.3525 12.3302 16.5736 12.1814 16.9154C12.0326 17.2572 12.0994 17.6543 12.3533 17.9277L16.4159 22.3027C16.6034 22.5036 16.8534 22.6035 17.0682 22.6035C17.2831 22.6035 17.5702 22.5036 17.7557 22.3038L21.8183 17.9288C22.0716 17.6559 22.1393 17.2577 21.9904 16.9159C21.8769 16.5723 21.537 16.3535 21.1659 16.3535H17.6932V3.22852C17.6932 2.88305 17.4137 2.60352 17.1034 2.60352C16.7931 2.60352 16.4432 2.88477 16.4432 3.22852ZM20.4511 17.6035L17.1034 21.207L13.7557 17.6035H20.4511Z"
+                                                fill="#3A424A" />
+                                        </svg>
+                                    </div>
+
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody class="data-table__tbody">
+                            <tr class="data-table__row">
+                                <td class="data-table__cell">
+                                    <button class="button button--icon button--edit">
+                                        <img src="assets/img/edit.svg" alt="Editar">
+                                    </button>
+                                </td>
+                                <td class="data-table__cell">75001619</td>
+                                <td class="data-table__cell">75001609</td>
+                                <td class="data-table__cell">30/11/2025</td>
+                                <td class="data-table__cell">Puno</td>
+                                <td class="data-table__cell">El ornito primero</td>
+                                <td class="data-table__cell">La Libertad</td>
+                                <td class="data-table__cell">Pataz</td>
+                                <td class="data-table__cell">
+                                    <button class="status-badge status-badge--pending">
+                                        
+                                        PENDIENTE
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr class="data-table__row">
+                                <td class="data-table__cell">
+                                    <button class="button button--icon button--edit">
+                                        <img src="assets/img/edit.svg" alt="Editar">
+                                    </button>
+                                </td>
+                                <td class="data-table__cell">75001609</td>
+                                <td class="data-table__cell">75001609</td>
+                                <td class="data-table__cell">30/11/2025</td>
+                                <td class="data-table__cell">Puno</td>
+                                <td class="data-table__cell">Acumulación parcoy N° 1</td>
+                                <td class="data-table__cell">La Libertad</td>
+                                <td class="data-table__cell">Pataz</td>
+                                <td class="data-table__cell">
+                                    <button class="status-badge status-badge--completed">
+                                        <svg width="24" height="25" viewBox="0 0 24 25" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <g clip-path="url(#clip0_127_8968)">
+                                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                                    d="M9.85452 19.6191L21.9954 7.9887L21.9963 7.9878C22.4036 7.60287 22.3981 6.97121 21.9982 6.58746C21.6034 6.20871 20.9681 6.20895 20.5731 6.58729L18.2536 8.80927L3.42655 12.0609C3.0316 11.6821 2.39649 11.6833 2.00185 12.0607C1.59922 12.4458 1.59947 13.0762 2.00168 13.4615L8.42997 19.6195C8.62869 19.81 8.88717 19.9035 9.14254 19.9035C9.39922 19.9035 9.65768 19.8077 9.85452 19.6191ZM18.2536 8.80927L3.42655 12.0609L9.14255 17.5373L18.2536 8.80927Z"
+                                                    fill="#1F5F1C" />
+                                            </g>
+                                            <defs>
+                                                <clipPath id="clip0_127_8968">
+                                                    <rect width="24" height="24" fill="white"
+                                                        transform="translate(0 0.603516)" />
+                                                </clipPath>
+                                            </defs>
+                                        </svg>
+                                        COMPLETADO
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr class="data-table__row">
+                                <td class="data-table__cell">
+                                    <button class="button button--icon button--edit">
+                                        <img src="assets/img/edit.svg" alt="Editar">
+                                    </button>
+                                </td>
+                                <td class="data-table__cell">75001619</td>
+                                <td class="data-table__cell">75001609</td>
+                                <td class="data-table__cell">30/11/2025</td>
+                                <td class="data-table__cell">Puno</td>
+                                <td class="data-table__cell">El amito primero</td>
+                                <td class="data-table__cell">La Libertad</td>
+                                <td class="data-table__cell">Pataz</td>
+                                <td class="data-table__cell">
+                                    <button class="status-badge status-badge--completed">
+                                        <svg width="24" height="25" viewBox="0 0 24 25" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <g clip-path="url(#clip0_127_8968)">
+                                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                                    d="M9.85452 19.6191L21.9954 7.9887L21.9963 7.9878C22.4036 7.60287 22.3981 6.97121 21.9982 6.58746C21.6034 6.20871 20.9681 6.20895 20.5731 6.58729L18.2536 8.80927L3.42655 12.0609C3.0316 11.6821 2.39649 11.6833 2.00185 12.0607C1.59922 12.4458 1.59947 13.0762 2.00168 13.4615L8.42997 19.6195C8.62869 19.81 8.88717 19.9035 9.14254 19.9035C9.39922 19.9035 9.65768 19.8077 9.85452 19.6191ZM18.2536 8.80927L3.42655 12.0609L9.14255 17.5373L18.2536 8.80927Z"
+                                                    fill="#1F5F1C" />
+                                            </g>
+                                            <defs>
+                                                <clipPath id="clip0_127_8968">
+                                                    <rect width="24" height="24" fill="white"
+                                                        transform="translate(0 0.603516)" />
+                                                </clipPath>
+                                            </defs>
+                                        </svg>
+
+                                        COMPLETADO
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr class="data-table__row">
+                                <td class="data-table__cell">
+                                    <button class="button button--icon button--edit">
+                                        <img src="assets/img/edit.svg" alt="Editar">
+                                    </button>
+                                </td>
+                                <td class="data-table__cell">75001609</td>
+                                <td class="data-table__cell">75001609</td>
+                                <td class="data-table__cell">30/11/2025</td>
+                                <td class="data-table__cell">Puno</td>
+                                <td class="data-table__cell">Acumulación parcoy N° 1</td>
+                                <td class="data-table__cell">La Libertad</td>
+                                <td class="data-table__cell">Pataz</td>
+                                <td class="data-table__cell">
+                                    <button class="status-badge status-badge--completed">
+                                        <svg width="24" height="25" viewBox="0 0 24 25" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <g clip-path="url(#clip0_127_8968)">
+                                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                                    d="M9.85452 19.6191L21.9954 7.9887L21.9963 7.9878C22.4036 7.60287 22.3981 6.97121 21.9982 6.58746C21.6034 6.20871 20.9681 6.20895 20.5731 6.58729L18.2536 8.80927L3.42655 12.0609C3.0316 11.6821 2.39649 11.6833 2.00185 12.0607C1.59922 12.4458 1.59947 13.0762 2.00168 13.4615L8.42997 19.6195C8.62869 19.81 8.88717 19.9035 9.14254 19.9035C9.39922 19.9035 9.65768 19.8077 9.85452 19.6191ZM18.2536 8.80927L3.42655 12.0609L9.14255 17.5373L18.2536 8.80927Z"
+                                                    fill="#1F5F1C" />
+                                            </g>
+                                            <defs>
+                                                <clipPath id="clip0_127_8968">
+                                                    <rect width="24" height="24" fill="white"
+                                                        transform="translate(0 0.603516)" />
+                                                </clipPath>
+                                            </defs>
+                                        </svg>
+
+                                        COMPLETADO
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </section>
+    </main>
+</body>

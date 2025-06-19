@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -9,6 +10,8 @@ import Swal from 'sweetalert2';
   styleUrl: './login.component.css'
 })
 export class LoginComponent {
+    constructor(private router: Router) {}
+
 
   ingresar(event: Event) {
     event.preventDefault();
@@ -16,6 +19,8 @@ export class LoginComponent {
       title: "Good job!",
       text: "You clicked the button!",
       icon: "success"
-    });
+    }).then(() => {
+        this.router.navigate(['/main']); // Cambia '/otra-vista' por tu ruta deseada
+    });;
   }
 }

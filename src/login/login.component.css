@@ -15,17 +15,17 @@
 }
 
 .logo {
-    height: 100px;
-    width: 400px;
+    height: 60px;
+    width: 260px;
     position: absolute;
-    top: 80px;
+    top: 40px;
     left: 80px;
 }
 
 .div-title {
-    margin: 60px;
+    margin: 0 40px;
     display: block;
-    width: 440px;
+    width: 620px;
     min-height: 200px;
 }
 
@@ -48,24 +48,32 @@
     font-size: 28px;
 }
 
+.subtitle2{
+    margin-top: 60px;
+}
 
 .login {
     background-color: rgba(0, 0, 0, 0.5);
     color: #ffffff;
     padding: 60px 80px;
     border-radius: 16px 0 0 16px;
-    width: 560px;
+    width: 600px;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
     box-sizing: border-box;
+    position: relative;
 }
 
 .login__header {
-    width: 100%;
-    padding: 16px;
+    box-sizing: border-box;
+    left: -460px;
+    position: absolute;
+    top: 20px;
+    width: 76%;
+    padding: 12px;
 }
 
 .login__nav {
@@ -119,13 +127,14 @@
 }
 
 .input-group {
+    position: relative;
     display: flex;
+    padding: 0 8px;
     background-color: #ffffff;
     align-items: center;
-    padding-left: 16px;
-    gap: 16px;
+    gap: 8px;
     width: 100%;
-    height: 52px;
+    height: 56px;
     box-sizing: border-box;
     border: 1px solid #cccccc;
 }
@@ -138,6 +147,23 @@
     }
 }
 
+.input-group label {
+      position: absolute;
+      left: 48px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #8e8e8e;
+      font-size: 16px;
+      pointer-events: none;
+      transition: 0.2s ease all;
+    }
+
+    .input-group__field:focus + label,
+    .input-group__field:not(:placeholder-shown) + label {
+      top: 8px;
+      font-size: 12px;
+    }
+
 .input-group__icon {
     font-size: 20px;
     color: #525252;
@@ -147,7 +173,6 @@
 .input-group__field {
     border: none;
     outline: none;
-    padding: 0;
     width: 320px;
     font-size: 16px;
     color: #525252;
@@ -271,6 +296,7 @@
 .login {
     @media (max-width: 768px) {
         width: 100%;
+        border-radius: 0;
         box-sizing: border-box;
     }
 
@@ -283,10 +309,24 @@
 
 .logo {
     @media screen and (max-width:1050px) {
-        height: 60px;
-        width: 260px;
+        height: 52px;
+        z-index: 1;
+        width: 220px;
         top: 0px;
         left: 0;
+    }
+}
+
+.icon-input{
+    @media screen and (width < 768px) {
+            scale: 3.5;
+
+    }
+}
+
+.input-group{
+    @media screen and (width < 768px){
+     /* padding: 20px;    */
     }
 }
 

@@ -1,0 +1,154 @@
+.header {
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    padding: 0 24px;
+}
+
+.header__nav {
+    display: flex;
+    justify-content: space-between;
+    height: 60px;
+    width: 100%;
+}
+
+.header__group {
+    display: flex;
+    align-items: center;
+}
+
+.header__group--logo {
+    gap: 28px;
+}
+
+.header__logo-div {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.header__logo-img {
+    height: 60px;
+}
+
+.header__logo-icon {
+    cursor: pointer;
+}
+
+.header__title {
+    font-size: 28px;
+    font-family: 'Poppins';
+    font-weight: 600;
+    color: #707070;
+}
+
+.header__subtitle {
+    font-family: 'Poppins';
+    font-size: 20px;
+    color: #555555;
+}
+
+.header__group--buttons {
+    gap: 20px;
+}
+
+.header__nav-button {
+    font-family: 'Roboto';
+    font-weight: 700;
+    cursor: pointer;
+    color: #1D1D1D;
+    font-size: 18px;
+    padding: 10px 15px;
+    transition: color 0.2s ease, background-color 0.2s ease;
+    text-decoration: none;
+}
+
+.header__nav-button:hover {
+    color: #0055aa;
+    background-color: rgba(0, 51, 102, 0.1);
+}
+
+.header__nav-button--gestion{
+    width: 100px;
+}
+
+.header__divider-line {
+    width: 2px;
+    height: 30px;
+    background-color: #cccccc;
+
+}
+
+.header__user-info {
+    height: 100%;
+    box-sizing: border-box;
+    background-color: #C1524D;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0px 16px;
+}
+
+.header__user-avatar {
+    width: 44px;
+    height: 44px;
+}
+
+.header__user-name {
+    font-family: 'Roboto';
+    font-weight: 700;
+    font-size: 24px;
+    color: #ffffff;
+}
+
+.header__user-role {
+    font-family: 'Roboto';
+    font-weight: 700;
+    font-size: 12px;
+    color: #ffffff;
+}
+
+/* Estilo para la imagen de "listones" debajo del header */
+.header-listons {
+    width: 100%;
+    height: 20px;
+    background-image: url('/assets/img/Header-Listons.png');
+    background-size: cover;
+    /* background-position: center; */
+    /* background-repeat: no-repeat; */
+    display: block;
+}
+
+/* RESPONSIVE */
+
+.header__nav {
+    @media (max-width: 992px) {
+        flex-direction: column;
+        height: auto;
+        padding: 16px 0;
+        gap: 20px;
+    }
+}
+
+.header__divider-line {
+    @media (max-width: 576px) {
+        height: 1px;
+        width: 80%;
+        margin: 10px 0;
+    }
+}
+
+.header__user-info {
+    @media (max-width: 992px) {
+        margin-top: 10px;
+        padding: 6px 12px;
+        gap: 8px;
+    }
+}
+
+.header__group--buttons {
+    @media (max-width: 576px) {
+        flex-direction: column;
+        gap: 10px;
+    }
+}

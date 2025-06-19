@@ -28,6 +28,20 @@
     url('/assets/fonts/Poppins/Poppins-Black.tff');
 }
 
+@font-face {
+    font-family: 'Roboto';
+    src: url('/assets/fonts/Roboto/Roboto-Thin.ttf'),
+    url('/assets/fonts/Roboto/Roboto-ExtraLight.ttf'),
+    url('/assets/fonts/Roboto/Roboto-Light.ttf'),
+    url('/assets/fonts/Roboto/Roboto-Regular.ttf'),
+    url('/assets/fonts/Roboto/Roboto-Medium.ttf'),
+    url('/assets/fonts/Roboto/Roboto-SemiBold.ttf'),
+    url('/assets/fonts/Roboto/Roboto-Bold.ttf'),
+    url('/assets/fonts/Roboto/Roboto-ExtraBold.ttf'),
+    url('/assets/fonts/Roboto/Roboto-Black.ttf'),
+    ;
+}
+
 body{
     min-height: 100vh;
 }

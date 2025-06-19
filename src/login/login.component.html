@@ -2,7 +2,8 @@
   <img src="assets/img/logo.png" alt="" class="logo">
   <div class="div-title">
     <h1 class="title">SIPMMA</h1>
-    <h2 class="subtitle">“Sistema de trazabilidad de minerales, insumos y productos ”</h2>
+    <h2 class="subtitle">Sistema Interoperable de la Pequeña Minería y Minería Artesanal</h2>
+    <h2 class="subtitle subtitle2">Plataforma única centralizada e interoperable, que promueve la transparencia, el proceso de formalización y la eficiencia operativa.</h2>
   </div>
   <main class="login">
     <header class="login__header">
@@ -27,11 +28,12 @@
               d="M26.5713 7.18891C26.941 7.66728 26.8529 8.35474 26.3746 8.72438L18.2785 14.9803C16.833 16.0971 14.8158 16.0971 13.3703 14.9803L5.27427 8.72438C4.79588 8.35474 4.70774 7.66728 5.07739 7.18891C5.44705 6.71053 6.13449 6.62239 6.61288 6.99204L14.7088 13.2479C15.3659 13.7556 16.2829 13.7556 16.9398 13.2479L25.0359 6.99204C25.5143 6.62239 26.2018 6.71053 26.5713 7.18891Z"
               fill="#525252" />
           </svg>
-          <input type="text" id="username" class="input-group__field" placeholder="Usuario">
+          <input type="text" id="username" class="input-group__field" placeholder="">
+          <label for="username">Usuario</label>
         </div>
 
         <div class="input-group" style="border-radius: 0 0 8px 8px ;">
-          <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-input">
             <path
               d="M16.3941 28.8431H11.2566C10.3517 28.8431 9.54893 28.8139 8.83377 28.7118C4.99524 28.2885 3.95898 26.4787 3.95898 21.5455V14.248C3.95898 9.31479 4.99524 7.50499 8.83377 7.08174C9.54893 6.97957 10.3517 6.95038 11.2566 6.95038H16.3065"
               stroke="#C1524D" stroke-width="2.13952" stroke-linecap="round" stroke-linejoin="round" />
@@ -45,8 +47,8 @@
             <path d="M10.6648 17.8976H10.6784" stroke="#C1524D" stroke-width="2.85269" stroke-linecap="round"
               stroke-linejoin="round" />
           </svg>
-
-          <input type="password" id="password" class="input-group__field" placeholder="Contraseña">
+          <input type="password" id="password" class="input-group__field" placeholder="">
+          <label for="password">Contraseña</label>
         </div>
         <a href="" style="align-self: flex-end; text-decoration: none; color: #ffffff;">¿Olvidaste tu contraseña?</a>
         <button type="submit" class="button button--primary login__submit-button" (click)="ingresar($event)">
