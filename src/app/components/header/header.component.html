@@ -3,7 +3,7 @@
         <div class="header__group header__group--logo">
             <div class="header__logo-div">
                 <img src="/assets/img/logo.png" alt="Logo de la institución" class="header__logo-img">
-                <svg (click)="toggleMenu()" class="header__logo-icon" width="40" height="33" viewBox="0 0 22 15"
+                <svg class="header__logo-icon" width="40" height="33" viewBox="0 0 22 15"
                     fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
                         d="M0.0394135 13.7214C0.0394135 14.367 0.56277 14.8903 1.20836 14.8903H19.9116C20.5572 14.8903 21.0805 14.367 21.0805 13.7214C21.0805 13.0758 20.5572 12.5524 19.9116 12.5524H1.20836C0.562771 12.5524 0.0394135 13.0758 0.0394135 13.7214ZM0.0394135 7.87661C0.0394135 8.52221 0.56277 9.04556 1.20836 9.04556H19.9116C20.5572 9.04556 21.0805 8.52221 21.0805 7.87661C21.0805 7.23102 20.5572 6.70766 19.9116 6.70766H1.20836C0.562771 6.70766 0.0394135 7.23102 0.0394135 7.87661ZM1.20836 0.862915C0.562771 0.862915 0.0394135 1.38627 0.0394135 2.03186C0.0394135 2.67746 0.56277 3.20081 1.20836 3.20081H19.9116C20.5572 3.20081 21.0805 2.67746 21.0805 2.03186C21.0805 1.38627 20.5572 0.862915 19.9116 0.862915Z"
@@ -12,14 +12,18 @@
             </div>
             <div class="header__titles">
                 <h1 class="header__title">SIPMMA</h1>
-                <h2 class="header__subtitle">Registro Integral de Formalización Minera</h2>
+                <div class="container__header__subtitle">
+                    <h2 class="header__subtitle">Registro Integral de Formalización Minera</h2>
+                </div>
             </div>
         </div>
-        <div class="header__group header__group--buttons" [class.visible]="menuVisible" *ngIf="menuVisible">
-            <button class="header__nav-button header__nav-button--reinfo">REINFO</button>
-            <span class="header__divider-line"></span>
-            <button class="header__nav-button header__nav-button--gestion">Gestión de expedientes</button>
-            <div class="header__user-info">
+        <div class="header__group header__group--buttons">
+            @if (menuVisible || browserWidth > 870) {
+                <button class="header__nav-button header__nav-button--reinfo">REINFO</button>
+                <span class="header__divider-line"></span>
+                <button class="header__nav-button header__nav-button--gestion">Gestión de<br/>expedientes</button>
+            }
+            <div class="header__user-info" (click)="toggleMenu()">
                 <img src="/assets/img/user.png" alt="Foto de perfil de MFYANCE" class="header__user-avatar">
                 <div class="header__user-details">
                     <p class="header__user-name">MFYANCE</p>

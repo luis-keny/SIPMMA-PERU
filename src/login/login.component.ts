@@ -16,8 +16,8 @@ export class LoginComponent {
   ingresar(event: Event) {
     event.preventDefault();
     Swal.fire({
-      title: "Good job!",
-      text: "You clicked the button!",
+      title: "¡Bienvenido!",
+      text: "Presione el botón para continuar",
       icon: "success"
     }).then(() => {
         this.router.navigate(['/main']); // Cambia '/otra-vista' por tu ruta deseada

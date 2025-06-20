@@ -1,6 +1,5 @@
-<app-header></app-header>
-
-<body>
+<div class="app-container">
+    <app-header></app-header>
     <main class="main-content">
         <section class="polygon-generation">
             <div class="group-generation">
@@ -22,7 +21,7 @@
                 </svg>
                 <h1 class="polygon-generation__title">Generación de polígonos</h1>
             </div>
-            <form class="filter-form">
+            <article class="filter-form">
                 <div class="filter-form__group">
                     <span for="region" class="filter-form__label">Región</span>
                     <select id="mining-right" name="mining-right" class="filter-form__select">
@@ -55,7 +54,7 @@
                         Limpiar
                     </button>
                 </div>
-            </form>
+            </article>
 
             <div class="polygon-generation__actions">
                 <button type="button" class="button button--accent button--icon-left">
@@ -333,4 +332,4 @@
 
         </section>
     </main>
-</body>
+</div>

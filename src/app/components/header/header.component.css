@@ -6,6 +6,7 @@
 }
 
 .header__nav {
+    padding: 16px 0;
     display: flex;
     justify-content: space-between;
     height: 60px;
@@ -49,6 +50,15 @@ button{
     font-family: 'Poppins';
     font-weight: 600;
     color: #707070;
+    @media (width < 1000px) {
+        display: none;
+    }
+}
+
+.container__header__subtitle {
+    @media screen and (width < 1280px) {
+        display: none;
+    }
 }
 
 .header__subtitle {
@@ -58,6 +68,7 @@ button{
 }
 
 .header__group--buttons {
+    position: relative;
     gap: 20px;
 }
 
@@ -79,7 +90,7 @@ button{
 
 .header__nav-button--gestion,
 .header__nav-button--reinfo{
-    width: 100px;
+    width: fit-content;
 }
 
 .header__divider-line {
@@ -90,6 +101,8 @@ button{
 }
 
 .header__user-info {
+    cursor: pointer;
+    user-select: none;
     height: 100%;
     box-sizing: border-box;
     background-color: #C1524D;
@@ -125,13 +138,15 @@ button{
     background-image: url('/assets/img/Header-Listons.png');
     background-size: cover;
     display: block;
+    margin-bottom: -15px;
+    position: relative;
+    z-index: 1;
 }
 
 /* RESPONSIVE */
 
 .header__nav {
     @media (max-width: 992px) {
-        flex-direction: column;
         height: auto;
         padding: 16px 0;
         gap: 20px;
@@ -139,7 +154,7 @@ button{
 }
 
 .header__divider-line {
-    @media (max-width: 576px) {
+    @media (max-width: 870px) {
         height: 1px;
         width: 80%;
         margin: 10px 0;
@@ -155,13 +170,13 @@ button{
 }
 
 .header__group--buttons {
-    @media (max-width: 576px) {
+    @media (max-width: 870px) {
         flex-direction: column;
         gap: 10px;
     }
 }
 
-@media screen and (width < 576px){
+@media screen and (width < 870px){
 
     .header__logo-div{
         width: 100%;
@@ -173,6 +188,7 @@ button{
     }
 
     .header__group--buttons{
+        transform: translateY(10px);
         padding-bottom: 12px;
         /* box-sizing: border-box; */
         flex-direction: column-reverse;
@@ -189,14 +205,14 @@ button{
         display: none;
     }
 
-    .header__nav-button,
-    .header__nav-button:hover{
+    .header__nav-button{
         color: #ffffff;
         font-size: 16px;
     }
 
     .header__nav-button:hover{
-        background-color: transparent;
+        background-color: #ffffff30;
+        color: white;
     }
 
     .header__title{

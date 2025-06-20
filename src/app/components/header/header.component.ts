@@ -10,11 +10,20 @@ import { Component, HostListener } from '@angular/core';
 })
 export class HeaderComponent {
 
+  browserWidth: number;
+  menuVisible = false;
 
-   menuVisible = true;
+  constructor() {
+    this.browserWidth = window.innerWidth;
+  }
 
   toggleMenu(): void {
     this.menuVisible = !this.menuVisible;
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: Event) {
+    this.browserWidth = (event.target as Window).innerWidth;
   }
 
   @HostListener('document:click', ['$event'])
