@@ -6,6 +6,7 @@
     <h2 class="subtitle subtitle2">Plataforma única centralizada e interoperable, que promueve la transparencia, el proceso de formalización y la eficiencia operativa.</h2>
   </div>
   <main class="login">
+    @if(browserWidth >= 1360) {
     <header class="login__header">
       <nav class="login__nav">
         <button href="#" class="login__nav-item">Opción</button>
@@ -13,8 +14,16 @@
         <button href="#" class="login__nav-item">Opción</button>
       </nav>
     </header>
+    }
 
     <section class="login__main-content">
+      @if(browserWidth < 1360) {
+        <nav class="login__nav">
+          <button href="#" class="login__nav-item">Opción</button>
+          <button href="#" class="login__nav-item">Opción</button>
+          <button href="#" class="login__nav-item">Opción</button>
+        </nav>
+      }
       <h1 class="login__title">Bienvenido</h1>
       <div class="login__separator-line"></div>
 

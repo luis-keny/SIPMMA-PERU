@@ -55,7 +55,7 @@
 .login {
     background-color: rgba(0, 0, 0, 0.5);
     color: #ffffff;
-    padding: 60px 80px;
+    padding: 30px 80px;
     border-radius: 16px 0 0 16px;
     width: 600px;
     min-height: 100vh;
@@ -288,7 +288,7 @@
 /* RESPONSIVE */
 
 .login {
-    @media (max-width: 768px) {
+    @media (max-width: 900px) {
         width: 100%;
         border-radius: 0;
         box-sizing: border-box;
@@ -325,7 +325,7 @@
 }
 
 .div-title {
-    @media (max-width: 768px) {
+    @media (max-width: 900px) {
         display: none;
     }
 }
