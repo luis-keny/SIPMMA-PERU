@@ -12,6 +12,15 @@
     width: 100%;
 }
 
+button{
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+}
+
 .header__group {
     display: flex;
     align-items: center;
@@ -68,7 +77,8 @@
     background-color: rgba(0, 51, 102, 0.1);
 }
 
-.header__nav-button--gestion{
+.header__nav-button--gestion,
+.header__nav-button--reinfo{
     width: 100px;
 }
 
@@ -108,14 +118,12 @@
     color: #ffffff;
 }
 
-/* Estilo para la imagen de "listones" debajo del header */
+
 .header-listons {
     width: 100%;
     height: 20px;
     background-image: url('/assets/img/Header-Listons.png');
     background-size: cover;
-    /* background-position: center; */
-    /* background-repeat: no-repeat; */
     display: block;
 }
 
@@ -150,5 +158,48 @@
     @media (max-width: 576px) {
         flex-direction: column;
         gap: 10px;
+    }
+}
+
+@media screen and (width < 576px){
+
+    .header__logo-div{
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .header__nav{
+        position: relative;
+    }
+
+    .header__group--buttons{
+        padding-bottom: 12px;
+        /* box-sizing: border-box; */
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(193, 82, 77, 1);
+        z-index: 10000;
+        top: 0;
+        right: 0;
+        position: absolute;
+    }
+
+    .header__titles{
+        display: none;
+    }
+
+    .header__nav-button,
+    .header__nav-button:hover{
+        color: #ffffff;
+        font-size: 16px;
+    }
+
+    .header__nav-button:hover{
+        background-color: transparent;
+    }
+
+    .header__title{
+        font-size: 20px;
     }
 }

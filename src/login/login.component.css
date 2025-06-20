@@ -38,7 +38,7 @@
 
 .title {
     font-family: 'Poppins';
-    font-weight: 800;
+    font-weight: bold;
     font-size: 48px;
 }
 
@@ -164,16 +164,10 @@
       font-size: 12px;
     }
 
-.input-group__icon {
-    font-size: 20px;
-    color: #525252;
-    margin-right: 8px;
-}
-
 .input-group__field {
     border: none;
     outline: none;
-    width: 320px;
+    width: 100%;
     font-size: 16px;
     color: #525252;
 }
@@ -319,8 +313,8 @@
 
 .icon-input{
     @media screen and (width < 768px) {
-            scale: 3.5;
-
+            /* scale: 3.5 */
+            height: 40px;
     }
 }
 
